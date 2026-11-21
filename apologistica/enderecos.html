@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endereços · APOlogistica</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="assets/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-dark app-nav shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="produtos.html"><i class="bi bi-truck-front me-2"></i>APOlogistica</a>
+    <ul class="navbar-nav ms-auto flex-row flex-wrap gap-3">
+      <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+      <li class="nav-item"><a class="nav-link" href="enderecos.html">Endereços</a></li>
+      <li class="nav-item"><a class="nav-link" href="transportadores.html">Transportadores</a></li>
+      <li class="nav-item"><a class="nav-link" href="fretes.html">Fretes</a></li>
+      <li class="nav-item"><a class="nav-link" href="relatorio.html">Relatório</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="container py-4">
+<div id="alerta"></div>
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card"><div class="card-header"><i class="bi bi-geo-alt me-1"></i>Endereço</div>
+      <div class="card-body">
+        <p class="text-muted small">O mesmo cadastro serve para origem e destino: escolha cada um na hora de criar o frete.</p>
+        <form id="form" autocomplete="off" class="row g-3">
+          <input type="hidden" name="id">
+          <div class="col-12"><label class="form-label">Apelido *</label><input name="apelido" class="form-control" required></div>
+          <div class="col-md-6"><label class="form-label">CEP</label><input name="cep" class="form-control" maxlength="9"></div>
+          <div class="col-md-6"><label class="form-label">Número</label><input name="numero" class="form-control"></div>
+          <div class="col-12"><label class="form-label">Complemento</label><input name="complemento" class="form-control"></div>
+          <div class="col-md-5"><label class="form-label">Bairro</label><input name="bairro" class="form-control"></div>
+          <div class="col-md-5"><label class="form-label">Cidade *</label><input name="cidade" class="form-control" required></div>
+          <div class="col-md-2"><label class="form-label">UF *</label><input name="uf" class="form-control" maxlength="2" required></div>
+          <div class="col-12">
+            <button class="btn btn-primary"><i class="bi bi-check2 me-1"></i>Salvar</button>
+            <button type="button" class="btn btn-outline-secondary" onclick="limpar()">Limpar</button>
+          </div>
+        </form>
+      </div></div>
+  </div>
+  <div class="col-lg-7">
+    <div class="card"><div class="card-header">Endereços cadastrados</div>
+      <div class="table-responsive"><table class="table table-hover align-middle mb-0">
+        <thead><tr><th>ID</th><th>Apelido</th><th>Endereço</th><th></th></tr></thead>
+        <tbody id="lista"></tbody></table></div></div>
+  </div>
+</div>
+</main>
+<script src="assets/app.js"></script>
+<script src="assets/enderecos.js"></script>
+</body>
+</html>
